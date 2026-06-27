@@ -1,0 +1,58 @@
+/*
+ * variables.css
+ * Plain CSS custom properties layered on top of the Tailwind @theme tokens.
+ * These are non-utility design tokens: shadows, gradients, blur, z-index,
+ * and timing values reused across components and keyframes.
+ */
+
+:root {
+  /* Elevation / shadows tuned for a dark, navy UI */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 16px 36px -16px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 36px 72px -28px rgba(0, 0, 0, 0.66);
+  --shadow-glow: 0 0 0 1px rgba(217, 169, 78, 0.35),
+    0 26px 70px -30px rgba(217, 169, 78, 0.22);
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(
+    120deg,
+    #c8973c 0%,
+    #e7c884 45%,
+    #a87c2c 100%
+  );
+  --gradient-ink: linear-gradient(
+    180deg,
+    rgba(9, 20, 32, 0) 0%,
+    rgba(9, 20, 32, 0.85) 70%,
+    var(--color-background) 100%
+  );
+  --gradient-radial-gold: radial-gradient(
+    60% 60% at 50% 0%,
+    rgba(217, 169, 78, 0.2) 0%,
+    rgba(217, 169, 78, 0) 70%
+  );
+  --gradient-text: linear-gradient(
+    180deg,
+    var(--color-cream-50) 0%,
+    var(--color-cream-100) 60%,
+    var(--color-sand-700) 130%
+  );
+
+  /* Surface treatments */
+  --glass-bg: rgba(13, 26, 40, 0.62);
+  --glass-border: rgba(214, 224, 235, 0.12);
+  --glass-blur: 14px;
+
+  /* Z-index scale */
+  --z-base: 1;
+  --z-sticky: 40;
+  --z-nav: 50;
+  --z-overlay: 60;
+  --z-cursor: 90;
+  --z-loader: 100;
+
+  /* Motion durations */
+  --dur-fast: 0.25s;
+  --dur-base: 0.5s;
+  --dur-slow: 0.9s;
+}

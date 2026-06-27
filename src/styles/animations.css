@@ -1,0 +1,166 @@
+/*
+ * animations.css
+ * Keyframes + shared motion utility classes used outside of Framer/GSAP
+ * (marquees, ambient background motion, loaders, shimmer, etc.).
+ */
+
+/* ---- Infinite marquee (Trusted By) ---- */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: marquee-x var(--marquee-duration, 38s) linear infinite;
+  will-change: transform;
+}
+
+.marquee--reverse {
+  animation-direction: reverse;
+}
+
+.marquee-group:hover .marquee {
+  animation-play-state: paused;
+}
+
+/* ---- Ambient floating orbs / aurora background ---- */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -4%, 0) scale(1.08);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(-6%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(6%, 4%) rotate(8deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 14s ease-in-out infinite;
+}
+
+/* ---- Scroll cue ---- */
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-scroll-cue {
+  animation: scroll-cue 2.1s var(--ease-out-expo) infinite;
+}
+
+/* ---- Shimmer (skeleton / button sheen) ---- */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  animation: shimmer 2.4s infinite;
+}
+
+/* ---- Loader reveal ---- */
+@keyframes loader-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up var(--dur-slow) var(--ease-out-expo) both;
+}
+
+/* ---- Gradient sweep for borders ---- */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 9s linear infinite;
+}
+
+/* ---- Pulsing dot ---- */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: currentColor;
+  animation: pulse-ring 2s var(--ease-out-expo) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .animate-float-slow,
+  .animate-scroll-cue,
+  .animate-spin-slow,
+  .shimmer::after,
+  .pulse-ring::before {
+    animation: none !important;
+  }
+}

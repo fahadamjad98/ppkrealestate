@@ -1,0 +1,103 @@
+/*
+ * typography.css
+ * Heading + body type system. Display headings use the serif (Fraunces),
+ * body + UI uses the grotesque sans (Inter). Sizes pull from the fluid
+ * @theme scale so everything stays responsive without breakpoints.
+ */
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+/* Display / hero scale -------------------------------------------------- */
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  line-height: var(--text-display--line-height);
+  font-weight: 380;
+  letter-spacing: -0.02em;
+  font-optical-sizing: auto;
+}
+
+.text-heading-1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  line-height: var(--text-h1--line-height);
+  font-weight: 400;
+  letter-spacing: -0.018em;
+}
+
+.text-heading-2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  line-height: var(--text-h2--line-height);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.text-heading-3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: var(--text-h3--line-height);
+  font-weight: 450;
+  letter-spacing: -0.01em;
+}
+
+/* Body scale ------------------------------------------------------------ */
+.text-lead {
+  font-size: var(--text-lead);
+  line-height: var(--text-lead--line-height);
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-muted);
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Eyebrow / label ------------------------------------------------------- */
+.text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-400);
+}
+
+/* Decorative text fills -------------------------------------------------- */
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tabular numerals for animated stats */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
