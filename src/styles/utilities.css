@@ -54,8 +54,8 @@
   position: relative;
   background: linear-gradient(
     180deg,
-    #16293b 0%,
-    #11202f 100%
+    #ffffff 0%,
+    #f4f8fc 100%
   );
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -66,7 +66,7 @@
 }
 
 .surface:hover {
-  border-color: rgba(217, 169, 78, 0.45);
+  border-color: rgba(246, 176, 52, 0.55);
   box-shadow: var(--shadow-glow);
 }
 

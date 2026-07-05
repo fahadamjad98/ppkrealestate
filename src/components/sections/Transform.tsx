@@ -20,44 +20,56 @@ const STEPS: Step[] = [
     title: "Choosing the right property",
     description:
       "From landmark residences to high-yield investment apartments, we match you to the right asset and handle every step of a seamless purchase.",
-    image: "/images/interior-living.jpg",
+    image: "/images/new-property.jpg",
   },
   {
-    title: "Golden Visa",
+    title: "Get a Golden Visa",
     description:
       "Invest in Dubai real estate and secure long-term residency. We streamline the entire Golden Visa process, from eligibility to issuance.",
-    image: "/images/hero-skyline.jpg",
+    image: "/images/dubai-golden-visa.webp",
   },
   {
-    title: "Mortgage",
+    title: "Get a Mortgage",
     description:
       "Access competitive financing through our banking partners, with structuring advice tailored to residents and overseas buyers alike.",
-    image: "/images/project-tower.jpg",
+    image: "/images/mortgage.jpg",
   },
   {
-    title: "Renting",
+    title: "Renting your property",
     description:
       "Position your property for the strongest possible yield, with tenant sourcing, contracts and Ejari handled end to end.",
-    image: "/images/lifestyle-home.jpg",
+    image: "/images/for-rent.jpg",
   },
   {
-    title: "Managing",
+    title: "Managing your property",
     description:
       "Hands-off ownership with proactive maintenance, inspections and reporting that protect and grow your asset's value.",
-    image: "/images/project-marina.jpg",
+    image: "/images/property-management.jpg",
   },
   {
-    title: "Selling",
+    title: "Selling your property",
     description:
       "Exit at the right moment and the right price, backed by precise valuation, targeted marketing and discreet negotiation.",
-    image: "/images/project-villa.jpg",
+    image: "/images/for-sale.png",
   },
+];
+
+// A soft glow that glides to a new spot and shifts colour as each step
+// activates — alternating warm gold and cool blue.
+const STEP_ACCENTS = [
+  { color: "rgba(246,176,52,0.40)", x: "2%", y: "4%" },
+  { color: "rgba(12,45,84,0.30)", x: "54%", y: "-6%" },
+  { color: "rgba(246,176,52,0.40)", x: "-6%", y: "42%" },
+  { color: "rgba(12,45,84,0.30)", x: "50%", y: "38%" },
+  { color: "rgba(246,176,52,0.40)", x: "6%", y: "20%" },
+  { color: "rgba(12,45,84,0.30)", x: "46%", y: "54%" },
 ];
 
 /**
  * "Transforming Spaces for Optimal Living" — a sticky scrollytelling section.
  * The image column scrolls upward while the step list stays pinned; the step
- * whose image sits at viewport centre lights up. Modeled on ThriveState.
+ * whose image sits at viewport centre lights up, and a soft glow behind the
+ * content glides + shifts colour with each step.
  */
 export function Transform() {
   const [active, setActive] = useState(0);
@@ -82,7 +94,45 @@ export function Transform() {
 
   return (
     <Section id="transform">
-      <div className="relative flex flex-col-reverse gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+      {/* Animated glow. overflow-hidden lives on THIS wrapper — a sibling of
+          the sticky list, never an ancestor — so sticky scrolling still works. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      >
+        {/* The active step's image, very faint, crossfading per step */}
+        {STEPS.map((step, i) => (
+          <motion.div
+            key={step.title}
+            className="absolute inset-0"
+            initial={false}
+            animate={{ opacity: active === i ? 0.08 : 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Image
+              src={step.image}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </motion.div>
+        ))}
+
+        {/* Soft colour glow that glides + shifts hue per step */}
+        <motion.div
+          className="absolute h-[70vh] w-[70vh] rounded-full blur-[130px]"
+          initial={false}
+          animate={{
+            backgroundColor: STEP_ACCENTS[active].color,
+            left: STEP_ACCENTS[active].x,
+            top: STEP_ACCENTS[active].y,
+          }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+        />
+      </div>
+
+      <div className="relative z-10 flex flex-col-reverse gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
         {/* Image column — scrolls upward past the pinned text */}
         <div className="flex w-full flex-col gap-6 lg:w-[48%]">
           {STEPS.map((step, i) => (
@@ -92,7 +142,7 @@ export function Transform() {
               ref={(el) => {
                 refs.current[i] = el;
               }}
-              className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--color-border)] shadow-[var(--shadow-md)]"
+              className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-[color:rgba(12,45,84,0.15)] shadow-[0_0_26px_3px_rgba(12,45,84,0.18),0_18px_44px_-14px_rgba(12,45,84,0.4)]"
             >
               <Image
                 src={step.image}
@@ -120,7 +170,7 @@ export function Transform() {
         {/* Sticky step list */}
         <div className="lg:sticky lg:top-28 lg:h-fit lg:w-[44%] lg:self-start">
           <AnimatedHeading
-            text="Transforming Spaces for Optimal Living"
+            text="We will help you to "
             level="h2"
             accentWords={[4]}
           />
@@ -131,16 +181,24 @@ export function Transform() {
             </p>
           </Reveal>
 
-          <ul className="mt-10 flex flex-col gap-5 lg:mt-12 lg:gap-6">
+          <ul className="mt-10 flex flex-col gap-2.5 lg:mt-12 lg:gap-3">
             {STEPS.map((step, i) => {
               const isActive = i === active;
               return (
-                <li key={step.title} className="flex items-start gap-4">
+                <li
+                  key={step.title}
+                  className={cn(
+                    "flex items-start gap-4 rounded-2xl border px-5 py-4 transition-all duration-400 ease-[var(--ease-out-expo)] md:px-6 md:py-5",
+                    isActive
+                      ? "border-gold-400/60 bg-white shadow-[0_18px_44px_-18px_rgba(12,45,84,0.4)]"
+                      : "border-transparent hover:border-[color:var(--color-border)]",
+                  )}
+                >
                   <span
                     className={cn(
                       "mt-1 flex size-7 shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-300",
                       isActive
-                        ? "border-gold-500 bg-gold-500 text-white"
+                        ? "border-gold-400 bg-gold-400 text-cream-50"
                         : "border-gold-300/40 text-gold-300/40",
                     )}
                   >

@@ -95,7 +95,7 @@ export function Testimonials() {
               </div>
 
               <figcaption className="mt-8 flex items-center gap-4 border-t border-[color:var(--color-border)] pt-6">
-                <span className="flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 font-display text-lg text-ink-950">
+                <span className="flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 font-display text-lg text-cream-50">
                   {current.name.charAt(0)}
                 </span>
                 <div>

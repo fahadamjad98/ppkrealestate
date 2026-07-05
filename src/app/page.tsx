@@ -46,7 +46,7 @@ export default function Home() {
         <TrustedBy />
         <Journey />
         <Transform />
-        <Services />
+        {/* <Services /> */}
         <Projects />
         <Process />
         <WhyChooseUs />

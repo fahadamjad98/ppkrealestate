@@ -50,7 +50,7 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
         <span className="rounded-full border border-white/20 bg-black/25 px-3 py-1 text-[0.7rem] uppercase tracking-[0.16em] text-white backdrop-blur-md">
           {project.category}
         </span>
-        <span className="flex size-11 items-center justify-center rounded-full border border-white/25 bg-black/25 text-white backdrop-blur-md transition-all duration-500 group-hover/proj:border-gold-400 group-hover/proj:bg-gold-400 group-hover/proj:text-ink-950">
+        <span className="flex size-11 items-center justify-center rounded-full border border-white/25 bg-black/25 text-white backdrop-blur-md transition-all duration-500 group-hover/proj:border-gold-400 group-hover/proj:bg-gold-400 group-hover/proj:text-cream-50">
           <ArrowUpRight className="size-5 transition-transform duration-500 group-hover/proj:rotate-45" />
         </span>
       </div>

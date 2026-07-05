@@ -2,29 +2,23 @@
 
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
-import { AnimatedHeading } from "@/components/ui/Heading";
+import { AnimatedHeading, Eyebrow } from "@/components/ui/Heading";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
  * "Live the PPK Experience" — a two-column editorial grid: a tall portrait
  * paired with a lede on the left, a statement + supporting copy and a wide
- * skyline on the right. Rendered as a gold/yellow band with dark navy text
- * for contrast against the surrounding navy sections.
+ * skyline on the right. White text on a dark-blue band, important words yellow.
  */
 export function Experience() {
   return (
-    <Section id="experience" className="bg-gold-400 text-ink-950">
-      {/* Dark-navy eyebrow (the default gold one would vanish on yellow) */}
-      <div className="flex items-center gap-3">
-        <span className="h-px w-8 bg-ink-950/50" />
-        <span className="font-sans text-xs font-medium uppercase tracking-[0.22em] text-ink-950">
-          The PPK experience
-        </span>
-      </div>
+    <Section id="experience" className="bg-[#0c2d54] text-white">
+      <Eyebrow>The PPK experience</Eyebrow>
       <AnimatedHeading
         text="PPK Real Estate Experience"
         level="display"
-        className="mt-3 font-display text-[clamp(3.25rem,14vw,12rem)] !font-black uppercase leading-[0.82] tracking-[-0.03em]"
+        accentWords={[1, 4]}
+        className="mt-4 font-display text-[clamp(3.25rem,9vw,4rem)] !font-black uppercase leading-[0.82] tracking-[-0.03em] text-white"
       />
 
       <div className="mt-12 flex flex-col gap-6 lg:mt-16 lg:flex-row lg:justify-between lg:gap-8">
@@ -33,7 +27,7 @@ export function Experience() {
           <Reveal>
             <div className="relative aspect-[403/450] overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--color-border)] shadow-[var(--shadow-md)]">
               <Image
-                src="/images/lifestyle-home.jpg"
+                src="/images/girl-coffee.jpg"
                 alt="A light-filled home where everyday life unfolds"
                 fill
                 sizes="(min-width: 1024px) 403px, 100vw"
@@ -42,7 +36,7 @@ export function Experience() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-auto text-[1.05rem] font-semibold leading-relaxed text-ink-950 lg:max-w-[600px]">
+            <p className="mt-auto text-[1.05rem] font-semibold leading-relaxed text-white/90 lg:max-w-[600px]">
               Discover your dream home in the city of gold. Our personalised
               approach to property search ensures you find a home where you can
               thrive comfortably — one that also builds value as a sound
@@ -55,13 +49,13 @@ export function Experience() {
         <div className="flex w-full flex-col gap-6 lg:max-w-[742px] lg:gap-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
             <Reveal>
-              <p className="font-display text-4xl font-extrabold leading-[1.02] text-ink-950 lg:max-w-[340px] lg:text-5xl">
+              <p className="font-display text-4xl font-extrabold leading-[1.02] text-white lg:max-w-[340px] lg:text-5xl">
                 A new way to search for properties in the dynamic real estate
                 market of Dubai
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="text-[1.05rem] font-semibold leading-relaxed text-ink-950 lg:max-w-[320px]">
+              <p className="text-[1.05rem] font-semibold leading-relaxed text-white/90 lg:max-w-[320px]">
                 We offer a wealth of opportunities for property investors in
                 Dubai. Our investment options are tailored to your goals so you
                 can maximise your returns — whether through high rental yields,

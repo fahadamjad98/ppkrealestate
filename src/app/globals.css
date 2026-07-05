@@ -12,43 +12,42 @@
  */
 @theme {
   /*
-   * Dark navy + gold palette — matched to the PPK Real Estate logo
-   * (deep navy mark/wordmark + warm gold). The "ink" scale is the DARK
-   * surface ramp (950 = deepest navy base, ascending numbers = progressively
-   * lighter/elevated navy). The "cream" scale is the LIGHT text ramp. This
-   * keeps the existing markup (bg-ink-*, text-cream-*) coherent on dark.
+   * White + blue + yellow palette (PPK logo blue/gold on a white ground).
+   * The "ink" scale is the LIGHT surface ramp (950 = white base, ascending
+   * numbers = progressively deeper blue-tinted surfaces). The "cream" scale is
+   * the BLUE text ramp. "gold" is the yellow accent used for important words.
    */
 
-  /* ---- Surfaces: deep navy → elevated navy ---- */
-  --color-ink-950: #091420; /* base / deepest background */
-  --color-ink-900: #0c1a28; /* primary navy section */
-  --color-ink-850: #0f1f30; /* alt navy */
-  --color-ink-800: #142838; /* elevated surface / cards */
-  --color-ink-700: #21364c; /* dividers / borders / scrollbar */
-  --color-ink-600: #2d4763; /* lifted edge / hover */
+  /* ---- Surfaces: white → soft blue-tinted light ---- */
+  --color-ink-950: #ffffff; /* base / page background */
+  --color-ink-900: #f5f8fc; /* primary tinted section / footer */
+  --color-ink-850: #eef4fa; /* alt tint */
+  --color-ink-800: #e6eef8; /* elevated surface / cards / hover */
+  --color-ink-700: #d3e0ef; /* dividers / borders / scrollbar */
+  --color-ink-600: #bacde3; /* deeper edge / inactive dots */
 
-  /* ---- Text: cool light ramp ---- */
-  --color-cream-50: #f3f6fa; /* primary heading text (near-white) */
-  --color-cream-100: #d6dfe9; /* body text */
-  --color-cream-200: #92a3b5; /* secondary text */
+  /* ---- Text: blue ramp ---- */
+  --color-cream-50: #0c2d54; /* primary heading text (deep blue) */
+  --color-cream-100: #1c4470; /* body text (blue) */
+  --color-cream-200: #5f7c9e; /* secondary text */
 
-  /* ---- Gold accent (tuned to the logo, popping on navy) ---- */
-  --color-gold-200: #f1ddb0;
-  --color-gold-300: #e7c884;
-  --color-gold-400: #d9a94e;
-  --color-gold-500: #c8973c;
-  --color-gold-600: #a87c2c;
+  /* ---- Yellow accent (#f6b034 — important words, highlights) ---- */
+  --color-gold-200: #fce1a8;
+  --color-gold-300: #f9c765;
+  --color-gold-400: #f6b034;
+  --color-gold-500: #e29a1c;
+  --color-gold-600: #bc7d12;
 
   /* ---- Steel blue (feature section fills) ---- */
-  --color-sand-300: #20364c;
-  --color-sand-500: #44607c;
-  --color-sand-700: #8295a8;
+  --color-sand-300: #dce7f5;
+  --color-sand-500: #7591b4;
+  --color-sand-700: #3f5f89;
 
   /* ---- Semantic ---- */
-  --color-background: #091420;
-  --color-foreground: #d6dfe9;
-  --color-muted: #8a9bad;
-  --color-border: rgba(214, 224, 235, 0.12);
+  --color-background: #ffffff;
+  --color-foreground: #1c4470;
+  --color-muted: #5f7c9e;
+  --color-border: rgba(12, 45, 84, 0.14);
 
   /* ---- Typography ---- */
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
@@ -123,7 +122,7 @@
 
   ::selection {
     background-color: var(--color-gold-400);
-    color: var(--color-ink-950);
+    color: var(--color-cream-50);
   }
 
   a {
