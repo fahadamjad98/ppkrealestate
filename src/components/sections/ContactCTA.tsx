@@ -6,8 +6,7 @@ import { BRAND } from "@/lib/constants";
 import { Section } from "@/components/ui/Section";
 import { AnimatedHeading } from "@/components/ui/Heading";
 import { Reveal } from "@/components/ui/Reveal";
-import { ButtonLink } from "@/components/ui/Button";
-import { Magnetic } from "@/components/ui/Magnetic";
+import { ContactForm } from "@/components/ui/ContactForm";
 
 const CONTACTS = [
   { icon: Phone, label: "Call the desk", value: BRAND.phone, href: BRAND.phoneHref },
@@ -53,17 +52,17 @@ export function ContactCTA() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Magnetic strength={0.35}>
-                <ButtonLink href={BRAND.emailHref} size="lg" withArrow>
-                  Book a private consultation
-                </ButtonLink>
-              </Magnetic>
-              <Magnetic strength={0.25}>
-                <ButtonLink href={BRAND.phoneHref} size="lg" variant="secondary">
+            <div className="mt-10">
+              <ContactForm />
+              <p className="text-small mt-5 text-muted">
+                Prefer to talk?{" "}
+                <a
+                  href={BRAND.phoneHref}
+                  className="text-gold-500 underline-offset-4 transition-colors hover:text-gold-400 hover:underline"
+                >
                   Call {BRAND.phone}
-                </ButtonLink>
-              </Magnetic>
+                </a>
+              </p>
             </div>
           </Reveal>
         </div>

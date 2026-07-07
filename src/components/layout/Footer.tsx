@@ -45,32 +45,32 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[color:var(--color-border)] bg-ink-950">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#0c2d54] text-white">
       <div className="container-x py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
           {/* Brand */}
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
               <Logo className="h-9 w-9" />
-              <span className="font-display text-2xl tracking-tight text-cream-50">
+              <span className="font-display text-2xl tracking-tight text-white">
                 {BRAND.name}
               </span>
             </div>
-            <p className="text-body mt-5">{BRAND.tagline}</p>
+            <p className="mt-5 leading-relaxed text-white/70">{BRAND.tagline}</p>
             <div className="mt-7 flex flex-col gap-2">
               <a
                 href={BRAND.phoneHref}
-                className="text-cream-100 transition-colors hover:text-gold-300"
+                className="text-white/90 transition-colors hover:text-gold-300"
               >
                 {BRAND.phone}
               </a>
               <a
                 href={BRAND.emailHref}
-                className="text-cream-100 transition-colors hover:text-gold-300"
+                className="text-white/90 transition-colors hover:text-gold-300"
               >
                 {BRAND.email}
               </a>
-              <span className="text-small text-muted">{BRAND.address}</span>
+              <span className="text-small text-white/50">{BRAND.address}</span>
             </div>
 
             <div className="mt-7 flex gap-3">
@@ -84,7 +84,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     aria-label={s.label}
                     data-cursor=""
-                    className="flex size-11 items-center justify-center rounded-full border border-[color:var(--color-border)] text-cream-100 transition-all duration-300 hover:border-gold-400/50 hover:text-gold-300"
+                    className="flex size-11 items-center justify-center rounded-full border border-white/20 text-white/80 transition-all duration-300 hover:border-gold-400/60 hover:text-gold-300"
                   >
                     <Icon className="size-[18px]" />
                   </a>
@@ -97,7 +97,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             {COLUMNS.map((col) => (
               <nav key={col.title} aria-label={col.title}>
-                <h3 className="text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+                <h3 className="text-[0.7rem] uppercase tracking-[0.18em] text-white/50">
                   {col.title}
                 </h3>
                 <ul className="mt-5 flex flex-col gap-3">
@@ -105,7 +105,7 @@ export function Footer() {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="group inline-flex items-center gap-1 text-cream-100/85 transition-colors hover:text-gold-300"
+                        className="group inline-flex items-center gap-1 text-white/75 transition-colors hover:text-gold-300"
                       >
                         {link.label}
                         <ArrowUpRight className="size-3.5 opacity-0 -translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
@@ -118,16 +118,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Giant wordmark */}
-        <div className="pointer-events-none mt-16 select-none overflow-hidden">
-          <span className="block bg-gradient-to-b from-ink-700 to-transparent bg-clip-text font-display text-[18vw] leading-none tracking-tight text-transparent">
-            {BRAND.shortName} Estate
-          </span>
-        </div>
+        <hr className="my-10 border-0 border-t border-white/10" />
 
-        <hr className="hairline my-8" />
-
-        <div className="flex flex-col items-center justify-between gap-4 text-small text-muted md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 text-small text-white/60 md:flex-row">
           <p>
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>

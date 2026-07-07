@@ -339,41 +339,51 @@ export const DIFFERENTIATORS: Differentiator[] = [
   },
 ];
 
+// Genuine client reviews as published by PPK Real Estate.
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: "t1",
     quote:
-      "PPK found us a home that was never listed, negotiated below what we'd budgeted, and made the entire move feel effortless. The research they brought was genuinely institutional.",
-    name: "Yasmin & Karl Adeyemi",
-    role: "Private buyers",
-    location: "Relocated from London",
+      "As a first-time buyer, I felt completely at ease throughout the process. Paaria's support was exceptional — from property selection to management-related guidance, everything was handled smoothly and professionally.",
+    name: "First-time buyer",
+    role: "Verified client review",
+    location: "Dubai",
     rating: 5,
   },
   {
     id: "t2",
     quote:
-      "We've placed three acquisitions through the desk. What sets them apart is the honesty — they've talked us out of more deals than they've talked us into, and we're wealthier for it.",
-    name: "Daniel Hargreave",
-    role: "Principal, Hargreave Family Office",
-    location: "Singapore",
+      "Paaria offered genuine advice and never pushed anything just for the sake of a sale. I ended up buying a 1-bedroom apartment perfect for rental returns.",
+    name: "Buy-to-let investor",
+    role: "Verified client review",
+    location: "Dubai",
     rating: 5,
   },
   {
     id: "t3",
     quote:
-      "Our launch was 98% absorbed before the public campaign even began. PPK understood the buyer better than we did and positioned the product accordingly.",
-    name: "Lena Vossberg",
-    role: "Head of Sales, Altura Group",
-    location: "Developer partner",
+      "Found a lovely property with excellent support from Paaria. She made the entire process smooth and stress-free, ensuring I felt genuinely looked after throughout!",
+    name: "Home buyer",
+    role: "Verified client review",
+    location: "Dubai",
     rating: 5,
   },
   {
     id: "t4",
     quote:
-      "Discreet, decisive and deeply prepared. I've worked with brokers on three continents — this is the standard I now measure them against.",
-    name: "Rohan Mehta",
-    role: "Institutional investor",
-    location: "Mumbai",
+      "Very professional and transparent. No false promises — just clear guidance at each step. The experience felt trustworthy and well-handled from the first call to the handover.",
+    name: "Property buyer",
+    role: "Verified client review",
+    location: "Dubai",
+    rating: 5,
+  },
+  {
+    id: "t5",
+    quote:
+      "The process started off a bit slowly, but once it picked up, everything was handled well. The team kept me informed, and the studio I got matches exactly what I was aiming for in terms of investment.",
+    name: "Studio investor",
+    role: "Verified client review",
+    location: "Dubai",
     rating: 5,
   },
 ];

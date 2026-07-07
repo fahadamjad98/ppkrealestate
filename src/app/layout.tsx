@@ -9,6 +9,7 @@ import { ScrollProgress } from "@/components/providers/ScrollProgress";
 import { Cursor } from "@/components/providers/Cursor";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -126,6 +127,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </SmoothScrollProvider>
+        <WhatsAppButton />
       </body>
     </html>
   );

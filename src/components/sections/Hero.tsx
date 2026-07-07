@@ -48,23 +48,33 @@ export function Hero() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover [filter:brightness(1.35)_saturate(1.28)_contrast(1.02)]"
           />
         </div>
-        {/* Legibility overlays */}
+        {/* Legibility overlay — bluish navy, lighter at top for a brighter feel */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(18,14,9,0.55) 0%, rgba(18,14,9,0.28) 38%, rgba(15,11,7,0.78) 100%)",
+              "linear-gradient(180deg, rgba(11,39,72,0.32) 0%, rgba(11,39,72,0.08) 42%, rgba(9,20,32,0.62) 100%)",
           }}
           aria-hidden
         />
+        {/* Warm sun glow (yellow) */}
         <div
-          className="absolute inset-0 opacity-70"
+          className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 90% at 50% 12%, rgba(195,154,94,0.18), transparent 55%)",
+              "radial-gradient(110% 80% at 50% 6%, rgba(246,176,52,0.32), transparent 55%)",
+          }}
+          aria-hidden
+        />
+        {/* Cool sky wash (blue) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(90% 70% at 82% 4%, rgba(74,138,206,0.24), transparent 60%)",
           }}
           aria-hidden
         />
