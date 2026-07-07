@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,14 @@ import { Logo } from "@/components/layout/Logo";
 export function Navbar() {
   const { scrolled } = useScroll(40);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+
+  // On the homepage a bare "#section" scrolls smoothly. On any other route we
+  // must send the user home first, so prefix hash links with "/".
+  const resolve = (href: string) =>
+    href.startsWith("#") && !onHome ? `/${href}` : href;
+  const contactHref = onHome ? "#contact" : "/#contact";
 
   // Lock body scroll when the mobile menu is open.
   useEffect(() => {
@@ -37,7 +46,7 @@ export function Navbar() {
         <nav className="container-x flex h-20 items-center justify-between">
           <Magnetic strength={0.25}>
             <a
-              href="#top"
+              href={onHome ? "#top" : "/"}
               aria-label={`${BRAND.name} home`}
               className="flex items-center gap-2.5 pl-1"
             >
@@ -55,7 +64,7 @@ export function Navbar() {
               <li key={link.href}>
                 <Magnetic strength={0.2}>
                   <a
-                    href={link.href}
+                    href={resolve(link.href)}
                     className="group relative rounded-full px-4 py-2 text-sm text-cream-100/80 transition-colors duration-300 hover:text-cream-50"
                   >
                     {link.label}
@@ -69,7 +78,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
               <Magnetic strength={0.3}>
-                <ButtonLink href="#contact" size="sm" withArrow>
+                <ButtonLink href={contactHref} size="sm" withArrow>
                   Book a consultation
                 </ButtonLink>
               </Magnetic>
@@ -114,7 +123,7 @@ export function Navbar() {
                     className="border-b border-[color:var(--color-border)]"
                   >
                     <a
-                      href={link.href}
+                      href={resolve(link.href)}
                       onClick={() => setOpen(false)}
                       className="flex items-baseline justify-between py-5"
                     >
@@ -135,7 +144,12 @@ export function Navbar() {
                 transition={{ delay: 0.5, duration: 0.6, ease: EASE_OUT_EXPO }}
                 className="mt-10 flex flex-col gap-4"
               >
-                <ButtonLink href="#contact" size="lg" withArrow className="w-full">
+                <ButtonLink
+                  href={contactHref}
+                  size="lg"
+                  withArrow
+                  className="w-full"
+                >
                   Book a consultation
                 </ButtonLink>
                 <a href={BRAND.phoneHref} className="text-body text-cream-100">

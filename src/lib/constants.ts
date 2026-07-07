@@ -46,6 +46,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Portfolio", href: "#projects" },
   { label: "Process", href: "#process" },
   { label: "Why PPK", href: "#why" },
+  { label: "About", href: "/about" },
   { label: "Voices", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -429,7 +430,7 @@ export const FAQS: FaqItem[] = [
 
 export const FOOTER_LINKS = {
   company: [
-    { label: "About PPK", href: "#why" },
+    { label: "About PPK", href: "/about" },
     { label: "Our Process", href: "#process" },
     { label: "Careers", href: "#contact" },
     { label: "Press", href: "#contact" },

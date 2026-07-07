@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { BRAND, FOOTER_LINKS } from "@/lib/constants";
 import { Logo } from "@/components/layout/Logo";
@@ -44,6 +47,11 @@ const COLUMNS = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+  // Off the homepage, hash anchors need a leading "/" to navigate home first.
+  const resolve = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#0c2d54] text-white">
       <div className="container-x py-16 md:py-20">
@@ -104,7 +112,7 @@ export function Footer() {
                   {col.links.map((link) => (
                     <li key={link.label}>
                       <a
-                        href={link.href}
+                        href={resolve(link.href)}
                         className="group inline-flex items-center gap-1 text-white/75 transition-colors hover:text-gold-300"
                       >
                         {link.label}
@@ -125,13 +133,13 @@ export function Footer() {
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#top" className="transition-colors hover:text-gold-300">
+            <a href={resolve("#top")} className="transition-colors hover:text-gold-300">
               Privacy
             </a>
-            <a href="#top" className="transition-colors hover:text-gold-300">
+            <a href={resolve("#top")} className="transition-colors hover:text-gold-300">
               Terms
             </a>
-            <a href="#top" className="transition-colors hover:text-gold-300">
+            <a href={resolve("#top")} className="transition-colors hover:text-gold-300">
               Back to top ↑
             </a>
           </div>
