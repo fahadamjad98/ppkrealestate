@@ -91,7 +91,6 @@ export function Process() {
           <AnimatedHeading
             text="A deliberate path from brief to keys"
             level="h2"
-            accentWords={[7]}
             className="mt-5"
           />
           <Reveal delay={0.1}>

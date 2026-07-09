@@ -208,7 +208,6 @@ export function Testimonials() {
           <AnimatedHeading
             text="What our customers say on Google"
             level="h2"
-            accentWords={[6]}
             className="mt-5 max-w-[18ch]"
           />
         </div>

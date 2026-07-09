@@ -1,13 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useSyncExternalStore } from "react";
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { EASE_OUT_EXPO, staggerContainer, lineReveal } from "@/lib/animations";
 import { SearchBar } from "@/components/ui/SearchBar";
 
 const HEADLINE = ["Find the", "address that", "becomes a", "legacy."];
+
+/** Hero background photos, cycled on a fixed interval with a crossfade. */
+const HERO_IMAGES = [
+  "/images/Hero_img_1.png",
+  "/images/Hero_img_2.webp",
+  "/images/Hero_img_3.png",
+];
+const HERO_INTERVAL_MS = 5000;
 
 const QUICK_LINKS = [
   { label: "Start your journey", href: "#process" },
@@ -33,6 +41,16 @@ export function Hero() {
   const cardY = useTransform(scrollY, [0, vh * 0.34], [0, -52]);
   const cardScale = useTransform(scrollY, [0, vh], [1, 0.885]);
 
+  // Cycle the background photo every HERO_INTERVAL_MS.
+  const [imageIndex, setImageIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(
+      () => setImageIndex((i) => (i + 1) % HERO_IMAGES.length),
+      HERO_INTERVAL_MS,
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="sticky top-0 z-0 flex h-[100svh] items-stretch px-3 pb-3 pt-20 md:px-4 md:pb-4 md:pt-24">
       {/* ---- Rounded hero card: nudges up early, then scales down ---- */}
@@ -40,16 +58,27 @@ export function Hero() {
         style={{ y: cardY, scale: cardScale }}
         className="relative flex w-full origin-center items-center justify-center overflow-hidden rounded-[1.75rem] will-change-transform md:rounded-[2.5rem]"
       >
-        {/* Background photograph */}
+        {/* Background photograph — crossfades between HERO_IMAGES */}
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero-skyline.jpg"
-            alt="Dubai skyline at golden hour"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover [filter:brightness(1.35)_saturate(1.28)_contrast(1.02)]"
-          />
+          <AnimatePresence>
+            <motion.div
+              key={imageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: EASE_OUT_EXPO }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={HERO_IMAGES[imageIndex]}
+                alt="Dubai skyline at golden hour"
+                fill
+                priority={imageIndex === 0}
+                sizes="100vw"
+                className="object-cover [filter:brightness(1.35)_saturate(1.28)_contrast(1.02)]"
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
         {/* Legibility overlay — bluish navy, lighter at top for a brighter feel */}
         <div
@@ -110,7 +139,7 @@ export function Hero() {
                   variants={lineReveal}
                   className={
                     i === HEADLINE.length - 1
-                      ? "inline-block italic text-gold-300"
+                      ? "inline-block italic"
                       : "inline-block"
                   }
                 >

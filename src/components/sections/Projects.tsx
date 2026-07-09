@@ -102,7 +102,6 @@ export function Projects() {
           <AnimatedHeading
             text="A portfolio measured in landmarks"
             level="h2"
-            accentWords={[5]}
             className="mt-5 max-w-2xl"
           />
         </div>

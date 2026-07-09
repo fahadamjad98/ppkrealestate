@@ -172,7 +172,6 @@ export function Transform() {
           <AnimatedHeading
             text="We will help you to "
             level="h2"
-            accentWords={[4]}
           />
           <Reveal delay={0.1}>
             <p className="text-body mt-6 max-w-md">

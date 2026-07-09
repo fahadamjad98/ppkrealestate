@@ -46,7 +46,6 @@ export default function AboutPage() {
           <AnimatedHeading
             text="Curated property, quiet confidence"
             level="h1"
-            accentWords={[3]}
             className="mt-5"
           />
           <Reveal delay={0.1}>
@@ -102,7 +101,6 @@ export default function AboutPage() {
             <AnimatedHeading
               text="Meet Paaria"
               level="h2"
-              accentWords={[2]}
               className="mt-5"
             />
             <div className="mt-6 flex flex-col gap-5">
@@ -164,7 +162,6 @@ export default function AboutPage() {
           <AnimatedHeading
             text="The principles behind every deal"
             level="h2"
-            accentWords={[2]}
             className="mt-5"
           />
         </div>
@@ -194,7 +191,6 @@ export default function AboutPage() {
           <AnimatedHeading
             text="Let's begin the conversation"
             level="h2"
-            accentWords={[3]}
             className="mx-auto"
           />
           <Reveal delay={0.1}>

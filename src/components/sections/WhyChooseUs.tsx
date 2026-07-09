@@ -157,7 +157,6 @@ export function WhyChooseUs() {
           <AnimatedHeading
             text="The advantage is in how we work"
             level="h2"
-            accentWords={[6]}
             className="mt-5"
           />
           <Reveal delay={0.1}>

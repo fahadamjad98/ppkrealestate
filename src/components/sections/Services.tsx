@@ -28,7 +28,6 @@ export function Services() {
           <AnimatedHeading
             text="A full spectrum of property intelligence"
             level="h2"
-            accentWords={[5]}
             className="mt-5"
           />
           <Reveal delay={0.1}>

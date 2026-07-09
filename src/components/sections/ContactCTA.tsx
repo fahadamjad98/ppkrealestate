@@ -40,7 +40,6 @@ export function ContactCTA() {
           <AnimatedHeading
             text="Let's find the address that's unmistakably yours"
             level="h1"
-            accentWords={[8]}
             className="mx-auto mt-6"
           />
           <Reveal delay={0.1}>

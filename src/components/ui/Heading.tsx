@@ -24,8 +24,6 @@ interface AnimatedHeadingProps {
   text: string;
   level?: Level;
   className?: string;
-  /** Words wrapped in this 1-based set get the gold gradient fill. */
-  accentWords?: number[];
   delay?: number;
   as?: "h1" | "h2" | "h3";
 }
@@ -38,7 +36,6 @@ export function AnimatedHeading({
   text,
   level = "h2",
   className,
-  accentWords = [],
   delay = 0,
   as,
 }: AnimatedHeadingProps) {
@@ -56,13 +53,7 @@ export function AnimatedHeading({
       <Tag className="contents">
         {words.map((word, i) => (
           <span key={`${word}-${i}`} className="reveal-mask mr-[0.22em]">
-            <motion.span
-              variants={lineReveal}
-              className={cn(
-                "inline-block",
-                accentWords.includes(i + 1) && "text-gradient-gold",
-              )}
-            >
+            <motion.span variants={lineReveal} className="inline-block">
               {word}
             </motion.span>
           </span>

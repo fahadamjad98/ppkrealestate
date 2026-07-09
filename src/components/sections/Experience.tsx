@@ -17,7 +17,6 @@ export function Experience() {
       <AnimatedHeading
         text="PPK Real Estate Experience"
         level="display"
-        accentWords={[4, 4]}
         className="mt-4 font-display text-[clamp(3.25rem,9vw,4rem)] !font-black uppercase leading-[0.82] tracking-[-0.03em] text-white"
       />
 

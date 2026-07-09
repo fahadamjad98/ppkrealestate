@@ -26,7 +26,6 @@ export function FAQ() {
           <AnimatedHeading
             text="The things clients ask first"
             level="h2"
-            accentWords={[5]}
             className="mt-5"
           />
           <Reveal delay={0.1}>

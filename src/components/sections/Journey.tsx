@@ -75,7 +75,6 @@ export function Journey() {
           <AnimatedHeading
             text="Our Journey of Success"
             level="h2"
-            accentWords={[4]}
             className="lg:max-w-[14ch]"
           />
           <Reveal delay={0.1}>
