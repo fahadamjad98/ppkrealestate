@@ -10,7 +10,7 @@ import { ButtonLink } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Meet Paaria, Founder & CEO of PPK Real Estate — a boutique Dubai advisory built on research, honesty and relationships that outlast the transaction.",
+    " Founder & CEO of PPK Real Estate — a boutique Dubai advisory built on research, honesty and relationships that outlast the transaction.",
 };
 
 const VALUES = [
@@ -99,7 +99,7 @@ export default function AboutPage() {
           <div>
             <Eyebrow>Leadership</Eyebrow>
             <AnimatedHeading
-              text="Meet Paaria"
+              text="Founder &  CEO of PPK Real Estate"
               level="h2"
               className="mt-5"
             />
@@ -137,20 +137,6 @@ export default function AboutPage() {
                 </p>
               </Reveal>
             </div>
-
-            <Reveal delay={0.2}>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <ButtonLink href={BRAND.emailHref} withArrow>
-                  Speak with Paaria
-                </ButtonLink>
-                <a
-                  href={BRAND.phoneHref}
-                  className="text-body font-medium text-gold-500 underline-offset-4 transition-colors hover:text-gold-400 hover:underline"
-                >
-                  {BRAND.phone}
-                </a>
-              </div>
-            </Reveal>
           </div>
         </div>
       </Section>

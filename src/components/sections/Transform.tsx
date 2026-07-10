@@ -26,7 +26,7 @@ const STEPS: Step[] = [
     title: "Get a Golden Visa",
     description:
       "Invest in Dubai real estate and secure long-term residency. We streamline the entire Golden Visa process, from eligibility to issuance.",
-    image: "/images/dubai-golden-visa.webp",
+    image: "/images/dubai-golden-visa.avif",
   },
   {
     title: "Get a Mortgage",
@@ -115,6 +115,7 @@ export function Transform() {
               fill
               sizes="100vw"
               className="object-cover"
+              loading="eager"
             />
           </motion.div>
         ))}

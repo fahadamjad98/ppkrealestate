@@ -21,23 +21,16 @@ const LinkedInIcon = ({ className }: IconProps) => (
   </svg>
 );
 
-const XIcon = ({ className }: IconProps) => (
+const FacebookIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
-  </svg>
-);
-
-const YouTubeIcon = ({ className }: IconProps) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-    <path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+    <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34v7.03C18.34 21.25 22 17.08 22 12.06Z" />
   </svg>
 );
 
 const SOCIALS = [
   { icon: InstagramIcon, href: BRAND.social.instagram, label: "Instagram" },
   { icon: LinkedInIcon, href: BRAND.social.linkedin, label: "LinkedIn" },
-  { icon: XIcon, href: BRAND.social.x, label: "X" },
-  { icon: YouTubeIcon, href: BRAND.social.youtube, label: "YouTube" },
+  { icon: FacebookIcon, href: BRAND.social.facebook, label: "Facebook" },
 ];
 
 const COLUMNS = [
@@ -133,10 +126,10 @@ export function Footer() {
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href={resolve("#top")} className="transition-colors hover:text-gold-300">
+            <a href="/privacy" className="transition-colors hover:text-gold-300">
               Privacy
             </a>
-            <a href={resolve("#top")} className="transition-colors hover:text-gold-300">
+            <a href="/terms" className="transition-colors hover:text-gold-300">
               Terms
             </a>
             <a href={resolve("#top")} className="transition-colors hover:text-gold-300">

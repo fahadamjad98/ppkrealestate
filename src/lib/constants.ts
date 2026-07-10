@@ -34,15 +34,15 @@ export const BRAND = {
   address: "Business Bay, Dubai, United Arab Emirates",
   url: "https://ppkrealestate.com",
   social: {
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com",
-    x: "https://x.com",
-    youtube: "https://youtube.com",
+    instagram: "https://www.instagram.com/ppkrealestate/",
+    linkedin: "https://ae.linkedin.com/company/ppkreal-estate",
+    facebook: "https://www.facebook.com/ppkrealestate",
   },
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "#services" },
+  { label: "Listings", href: "/listings" },
   { label: "Portfolio", href: "#projects" },
   { label: "Process", href: "#process" },
   { label: "Why PPK", href: "#why" },

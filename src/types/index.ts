@@ -27,6 +27,25 @@ export interface Project {
   accent: string; // gradient overlay tint
 }
 
+export interface Listing {
+  slug: string;
+  title: string;
+  community: string;
+  location: string;
+  purpose: "sale" | "rent";
+  type: string; // Villa, Apartment, Penthouse…
+  price: string; // display string, e.g. "AED 25,000,000" or "Price on request"
+  beds: string;
+  baths: string;
+  area: string; // built-up area, e.g. "12,000 sqft"
+  reference: string;
+  description: string;
+  highlights: string[];
+  amenities: string[];
+  images: string[]; // gallery paths under /public
+  featured?: boolean;
+}
+
 export interface ProcessStep {
   id: string;
   number: string;

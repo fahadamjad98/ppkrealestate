@@ -7,7 +7,7 @@ import { AnimatedHeading, Eyebrow } from "@/components/ui/Heading";
 
 function Pill({ name }: { name: string }) {
   return (
-    <div className="group/pill mx-2.5 flex h-16 min-w-[190px] select-none items-center justify-center gap-3 whitespace-nowrap rounded-2xl border border-white/10 bg-white/[0.05] px-8 font-display text-lg text-white/90 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-400/70 hover:bg-gold-400/[0.08] hover:text-gold-200 md:h-[72px] md:min-w-[220px] md:text-xl">
+    <div className="group/pill mx-2.5 flex h-16 min-w-[190px] select-none items-center justify-center gap-3 whitespace-nowrap rounded-2xl border border-white/60 bg-white px-8 font-display text-xl font-bold text-cream-50 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_26px_60px_-16px_rgba(246,176,52,0.55)] md:h-[72px] md:min-w-[220px] md:text-2xl">
       <span className="size-1.5 shrink-0 rounded-full bg-gold-400 transition-transform duration-300 group-hover/pill:scale-125" />
       {name}
     </div>
