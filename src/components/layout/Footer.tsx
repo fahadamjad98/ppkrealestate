@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { BRAND, FOOTER_LINKS } from "@/lib/constants";
-import { Logo } from "@/components/layout/Logo";
 
 type IconProps = { className?: string };
 
@@ -52,7 +52,13 @@ export function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
-              <Logo className="h-9 w-9" />
+              <Image
+                src="/images/PPK_logo_symbol.png"
+                alt={`${BRAND.name} logo`}
+                width={40}
+                height={49}
+                className="h-11 w-auto"
+              />
               <span className="font-display text-2xl tracking-tight text-white">
                 {BRAND.name}
               </span>

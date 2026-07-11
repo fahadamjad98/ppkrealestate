@@ -42,7 +42,6 @@ export const BRAND = {
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "#services" },
-  { label: "Listings", href: "/listings" },
   { label: "Portfolio", href: "#projects" },
   { label: "Process", href: "#process" },
   { label: "Why PPK", href: "#why" },

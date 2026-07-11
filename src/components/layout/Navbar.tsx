@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
@@ -10,7 +11,6 @@ import { useScroll } from "@/hooks/useScroll";
 import { EASE_OUT_EXPO } from "@/lib/animations";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { ButtonLink } from "@/components/ui/Button";
-import { Logo } from "@/components/layout/Logo";
 
 export function Navbar() {
   const { scrolled } = useScroll(40);
@@ -50,10 +50,16 @@ export function Navbar() {
               aria-label={`${BRAND.name} home`}
               className="flex items-center gap-2.5 pl-1"
             >
-              <Logo className="h-7 w-7" />
-              <span className="font-display text-lg tracking-tight text-cream-50">
-                {BRAND.shortName}
-                <span className="text-gold-400">.</span>
+              <Image
+                src="/images/PPK_logo_symbol.png"
+                alt={`${BRAND.name} logo`}
+                width={28}
+                height={34}
+                priority
+                className="h-9 w-auto"
+              />
+              <span className="font-display text-lg font-semibold tracking-tight text-cream-50">
+                PPK REAL ESTATE
               </span>
             </a>
           </Magnetic>
