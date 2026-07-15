@@ -75,6 +75,93 @@ export const LISTINGS: Listing[] = [
     ],
     images: gallery("majestine", 7),
   },
+  {
+    slug: "palm-jumeirah-villa",
+    title: "Beachfront Villa on Palm Jumeirah", // TODO: confirm title
+    community: "Palm Jumeirah",
+    location: "Palm Jumeirah, Dubai",
+    purpose: "sale",
+    type: "Villa",
+    price: "Price on request", // TODO
+    beds: "5", // TODO
+    baths: "6", // TODO
+    area: "8,500 sqft", // TODO
+    reference: "PPK-PJ-001",
+    description:
+      "Placeholder description for this Palm Jumeirah villa — replace with the real details covering the beach access, views, plot and finishes.", // TODO
+    highlights: [
+      "Private beach access",
+      "Infinity pool",
+      "Panoramic sea views", // TODO: confirm
+    ],
+    amenities: [
+      "Private pool",
+      "Landscaped garden",
+      "Maid's room",
+      "Covered parking",
+      "24/7 security",
+      "Beach access", // TODO: confirm
+    ],
+    images: gallery("palm-jumeirah", 5),
+    featured: true,
+  },
+  {
+    slug: "dubai-hills-villa",
+    title: "Contemporary Villa in Dubai Hills Estate", // TODO: confirm title
+    community: "Dubai Hills Estate",
+    location: "Dubai Hills Estate, Dubai",
+    purpose: "sale",
+    type: "Villa",
+    price: "Price on request", // TODO
+    beds: "4", // TODO
+    baths: "5", // TODO
+    area: "6,200 sqft", // TODO
+    reference: "PPK-DH-001",
+    description:
+      "Placeholder description for this Dubai Hills Estate villa — replace with the real details covering the layout, garden, views and finishes.", // TODO
+    highlights: [
+      "Golf course community",
+      "Modern open-plan living",
+      "Landscaped garden", // TODO: confirm
+    ],
+    amenities: [
+      "Private garden",
+      "Covered parking",
+      "Maid's room",
+      "24/7 security",
+      "Community pool",
+      "Parks & golf course", // TODO: confirm
+    ],
+    images: gallery("dubai-hills", 5),
+  },
+  {
+    slug: "jumeirah-golf-estates-villa",
+    title: "Villa in Jumeirah Golf Estates", // TODO: confirm title
+    community: "Jumeirah Golf Estates",
+    location: "Jumeirah Golf Estates, Dubai",
+    purpose: "sale",
+    type: "Villa",
+    price: "Price on request", // TODO
+    beds: "5", // TODO
+    baths: "6", // TODO
+    area: "7,000 sqft", // TODO
+    reference: "PPK-JGE-001",
+    description:
+      "Placeholder description for this Jumeirah Golf Estates villa — replace with the real details covering the golf views, plot, layout and finishes.", // TODO
+    highlights: [
+      "Golf course views",
+      "Spacious living areas",
+      "Private garden", // TODO: confirm
+    ],
+    amenities: [
+      "Private garden",
+      "Covered parking",
+      "Maid's room",
+      "24/7 security",
+      "Golf course access", // TODO: confirm
+    ],
+    images: gallery("jumeirah-golf-estates", 4),
+  },
 ];
 
 export const getListing = (slug: string): Listing | undefined =>

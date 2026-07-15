@@ -37,9 +37,14 @@ export default function ListingsPage() {
         </p>
       </Reveal>
 
-      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:thin]">
         {LISTINGS.map((listing) => (
-          <ListingCard key={listing.slug} listing={listing} />
+          <div
+            key={listing.slug}
+            className="w-[300px] shrink-0 snap-start sm:w-[340px]"
+          >
+            <ListingCard listing={listing} />
+          </div>
         ))}
       </div>
     </Section>

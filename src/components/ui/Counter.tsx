@@ -16,6 +16,8 @@ interface CounterProps {
   suffix?: string;
   /** Decimal places to show (auto-detected from the value if omitted). */
   decimals?: number;
+  /** Re-run the count every time it scrolls into view (default: once). */
+  repeat?: boolean;
   className?: string;
 }
 
@@ -28,10 +30,11 @@ export function Counter({
   prefix = "",
   suffix = "",
   decimals,
+  repeat = false,
   className,
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.6 });
+  const inView = useInView(ref, { once: !repeat, amount: 0.6 });
 
   const places = decimals ?? (Number.isInteger(value) ? 0 : 1);
 
@@ -49,7 +52,8 @@ export function Counter({
   );
 
   useEffect(() => {
-    if (inView) motionValue.set(value);
+    // Count up when in view; reset to 0 when out (so it replays on re-entry).
+    motionValue.set(inView ? value : 0);
   }, [inView, value, motionValue]);
 
   return (

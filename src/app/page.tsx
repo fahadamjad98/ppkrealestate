@@ -44,10 +44,10 @@ export default function Home() {
         <Experience />
         <Footprint />
         <TrustedBy />
+        <Projects />
         <Journey />
         <Transform />
         {/* <Services /> */}
-        <Projects />
         <Process />
         <WhyChooseUs />
         <Testimonials />

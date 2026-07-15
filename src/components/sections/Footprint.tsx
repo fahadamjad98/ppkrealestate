@@ -69,7 +69,7 @@ export function Footprint() {
           <Reveal>
             <h2 className="text-heading-2 mt-5 max-w-[16ch] text-balance text-white">
               A presence across the{" "}
-              <span className="text-[#0b2748]">Emirates</span>
+              <span className="text-[#ffffff]">Emirates</span>
             </h2>
           </Reveal>
 
