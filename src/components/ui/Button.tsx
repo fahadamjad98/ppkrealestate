@@ -60,6 +60,7 @@ interface ButtonProps
 interface AnchorProps extends BaseProps {
   href: string;
   external?: boolean;
+  download?: boolean;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -79,6 +80,7 @@ Button.displayName = "Button";
 export function ButtonLink({
   href,
   external,
+  download,
   variant = "primary",
   size = "md",
   withArrow,
@@ -87,6 +89,22 @@ export function ButtonLink({
 }: AnchorProps) {
   const classes = cn(base, variants[variant], sizes[size], className);
   const content = <Inner withArrow={withArrow}>{children}</Inner>;
+
+  // Static file downloads (e.g. PDFs) — plain anchor so the browser handles it.
+  if (download) {
+    return (
+      <a
+        href={href}
+        download
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cursor=""
+        className={classes}
+      >
+        {content}
+      </a>
+    );
+  }
 
   if (external || href.startsWith("http") || href.startsWith("tel") || href.startsWith("mailto")) {
     return (

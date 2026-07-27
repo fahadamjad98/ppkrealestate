@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BRAND, NAV_LINKS } from "@/lib/constants";
 import { useScroll } from "@/hooks/useScroll";
@@ -82,6 +82,21 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <div className="hidden lg:block">
+              <Magnetic strength={0.3}>
+                <ButtonLink
+                  href="/PPK-Company-Profile.pdf"
+                  download
+                  variant="secondary"
+                  size="sm"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Download className="size-4" />
+                    Company Profile
+                  </span>
+                </ButtonLink>
+              </Magnetic>
+            </div>
             <div className="hidden sm:block">
               <Magnetic strength={0.3}>
                 <ButtonLink href={contactHref} size="sm" withArrow>
@@ -157,6 +172,18 @@ export function Navbar() {
                   className="w-full"
                 >
                   Book a consultation
+                </ButtonLink>
+                <ButtonLink
+                  href="/PPK-Company-Profile.pdf"
+                  download
+                  variant="secondary"
+                  size="lg"
+                  className="w-full"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Download className="size-5" />
+                    Company Profile
+                  </span>
                 </ButtonLink>
                 <a href={BRAND.phoneHref} className="text-body text-cream-100">
                   {BRAND.phone}

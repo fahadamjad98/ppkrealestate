@@ -430,6 +430,7 @@ export const FAQS: FaqItem[] = [
 export const FOOTER_LINKS = {
   company: [
     { label: "About PPK", href: "/about" },
+    { label: "Company Profile", href: "/PPK-Company-Profile.pdf" },
     { label: "Our Process", href: "#process" },
     { label: "Careers", href: "#contact" },
     { label: "Press", href: "#contact" },

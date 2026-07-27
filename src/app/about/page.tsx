@@ -136,6 +136,18 @@ export default function AboutPage() {
                   relationships that outlast the transaction.
                 </p>
               </Reveal>
+              <Reveal delay={0.2}>
+                <div className="mt-2">
+                  <ButtonLink
+                    href="/PPK-Company-Profile.pdf"
+                    download
+                    variant="secondary"
+                    withArrow
+                  >
+                    Download Company Profile
+                  </ButtonLink>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>

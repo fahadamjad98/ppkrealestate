@@ -108,17 +108,23 @@ export function Footer() {
                   {col.title}
                 </h3>
                 <ul className="mt-5 flex flex-col gap-3">
-                  {col.links.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={resolve(link.href)}
-                        className="group inline-flex items-center gap-1 text-white/75 transition-colors hover:text-gold-300"
-                      >
-                        {link.label}
-                        <ArrowUpRight className="size-3.5 opacity-0 -translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                      </a>
-                    </li>
-                  ))}
+                  {col.links.map((link) => {
+                    const isFile = link.href.endsWith(".pdf");
+                    return (
+                      <li key={link.label}>
+                        <a
+                          href={resolve(link.href)}
+                          {...(isFile
+                            ? { download: true, target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                          className="group inline-flex items-center gap-1 text-white/75 transition-colors hover:text-gold-300"
+                        >
+                          {link.label}
+                          <ArrowUpRight className="size-3.5 opacity-0 -translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
             ))}
