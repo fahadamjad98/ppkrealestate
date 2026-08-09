@@ -52,7 +52,7 @@ export default function AboutPage() {
             <p className="text-lead mt-7">
               PPK Real Estate is a boutique advisory pairing institutional-grade
               research with white-glove brokerage — helping discerning clients
-              acquire, invest in, and exit landmark properties across the UAE.
+              acquire, invest in, manage, and exit landmark properties across the UAE.
               We measure success not in listings closed, but in trust earned.
             </p>
           </Reveal>
@@ -107,7 +107,7 @@ export default function AboutPage() {
               <Reveal delay={0.05}>
                 <p className="text-body">
                   Paaria founded PPK Real Estate on a simple conviction: that
-                  buying, selling or investing in property should feel less like
+                  buying, selling, managing or investing in property should feel less like
                   a transaction and more like being genuinely looked after.
                   After years advising private buyers, investors and family
                   offices across Dubai&rsquo;s fast-moving market, she built the

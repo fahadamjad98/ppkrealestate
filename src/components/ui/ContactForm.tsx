@@ -110,7 +110,7 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          placeholder="What are you looking for — buying, selling, renting or investing?"
+          placeholder="What are you looking for — buying, selling, renting, managing or investing?"
           required
           className={`${FIELD} resize-none`}
         />

@@ -26,7 +26,7 @@ export const BRAND = {
   shortName: "PPK",
   tagline: "Curated property. Quiet confidence.",
   description:
-    "PPK Real Estate is a boutique advisory pairing institutional research with white-glove brokerage — helping discerning clients acquire, invest in, and exit landmark properties.",
+    "PPK Real Estate is a boutique advisory pairing institutional research with white-glove brokerage — helping discerning clients acquire, invest in, manage, and exit landmark properties.",
   phone: "0523514029",
   phoneHref: "tel:+971523514029",
   email: "Paaria@ppkrealestate.com",

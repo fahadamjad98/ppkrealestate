@@ -73,7 +73,7 @@ export function WhatsAppButton() {
                   PPK Real Estate
                 </div>
                 Hi 👋 Tell us what you&rsquo;re looking for — buying, selling,
-                renting or investing — and we&rsquo;ll reply on WhatsApp.
+                renting, managing or investing — and we&rsquo;ll reply on WhatsApp.
               </div>
             </div>
 
