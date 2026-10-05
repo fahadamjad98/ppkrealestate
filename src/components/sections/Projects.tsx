@@ -21,6 +21,9 @@ import type { Project, Listing } from "@/types";
 import { cn } from "@/lib/utils";
 
 const FEATURED_SLUGS = [
+  "wellington-grand-villas",
+  "sanctuary-by-prestige-one",
+  "hilton-residences-dubai-maritime-city",
   "palm-jumeirah-villa",
   "dubai-hills-villa",
   "jumeirah-golf-estates-villa",
@@ -251,20 +254,20 @@ export function Projects() {
         transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
         className="no-scrollbar mt-12 flex snap-x gap-5 overflow-x-auto scroll-smooth pb-2"
       >
-        {PROJECTS.map((project) => (
-          <div
-            key={project.id}
-            className="w-[300px] shrink-0 snap-start sm:w-[360px] lg:w-[440px]"
-          >
-            <ProjectCard project={project} />
-          </div>
-        ))}
         {FEATURED_LISTINGS.map((listing) => (
           <div
             key={listing.slug}
             className="w-[300px] shrink-0 snap-start sm:w-[360px] lg:w-[440px]"
           >
             <ListingShowcaseCard listing={listing} />
+          </div>
+        ))}
+        {PROJECTS.map((project) => (
+          <div
+            key={project.id}
+            className="w-[300px] shrink-0 snap-start sm:w-[360px] lg:w-[440px]"
+          >
+            <ProjectCard project={project} />
           </div>
         ))}
       </motion.div>

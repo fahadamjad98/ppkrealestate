@@ -17,6 +17,96 @@ const gallery = (folder: string, count: number): string[] =>
 
 export const LISTINGS: Listing[] = [
   {
+    slug: "wellington-grand-villas",
+    title: "6 Bedroom Villa at Wellington Grand Villas",
+    community: "Wellington Grand Villas",
+    location: "Dubai, UAE", // TODO: confirm exact location
+    purpose: "sale",
+    type: "Villa",
+    price: "AED 25,387,028",
+    beds: "6",
+    baths: "7", // TODO: confirm
+    area: "13,458.77 sqft",
+    reference: "PPK-WGV-001",
+    description:
+      "Off-plan 6 bedroom Type B1 villa (GV-16) with 13,458.77 sqft built-up area on an 8,011.86 sqft plot. A gated community of contemporary luxury villas set among landscaped, tree-lined streets, with a grand arrival gateway and resort-style living.",
+    highlights: [
+      "8,011.86 sqft plot",
+      "Payment plan: 30% during construction, 70% on completion",
+      "Gated community with grand entrance",
+      "Contemporary villa architecture",
+      "Landscaped, tree-lined streets", // TODO: confirm highlights
+    ],
+    amenities: [
+      "Private garden",
+      "Covered parking",
+      "Maid's room",
+      "24/7 security",
+      "Community pool",
+      "Parks & green spaces", // TODO: confirm amenities
+    ],
+    images: gallery("grand-villas", 11),
+    featured: true,
+  },
+  {
+    slug: "sanctuary-by-prestige-one",
+    title: "1 Bedroom Apartment at Sanctuary by Prestige One",
+    community: "Sanctuary",
+    location: "Dubai, UAE", // TODO: confirm exact location
+    purpose: "sale",
+    type: "Apartment",
+    price: "AED 2,112,000",
+    beds: "1",
+    baths: "1", // TODO: confirm
+    area: "650.57 sqft",
+    reference: "PPK-SPO-001",
+    description:
+      "Off-plan 1 bedroom apartment (Unit 302), anticipated completion August 2029. Refined residences by Prestige One with elegant, light-filled interiors, natural stone finishes and curated residents' lounges.",
+    highlights: [
+      "Off-plan — completion Aug 2029",
+      "Designer interiors with natural stone",
+      "Residents' lounge & games room",
+      "Floor-to-ceiling windows", // TODO: confirm highlights
+    ],
+    amenities: [
+      "Swimming pool",
+      "Fully-equipped gym",
+      "Residents' lounge",
+      "Covered parking",
+      "24/7 security",
+      "Concierge", // TODO: confirm amenities
+    ],
+    images: gallery("sanctuary", 13),
+  },
+  {
+    slug: "hilton-residences-dubai-maritime-city",
+    title: "1 Bedroom Apartment at Hilton Residences",
+    community: "Dubai Maritime City",
+    location: "Dubai Maritime City, Dubai",
+    purpose: "sale",
+    type: "Apartment",
+    price: "AED 3,243,000",
+    beds: "1",
+    baths: "1", // TODO: confirm
+    area: "813.97 sqft",
+    reference: "PPK-HR-001",
+    description:
+      "Off-plan 1 bedroom apartment (Unit 803) at Hilton Residences Dubai Maritime City by Prestige One, anticipated completion December 2029. A Hilton-branded waterfront tower with views across the Dubai skyline and the sea.",
+    highlights: [
+      "Off-plan — completion Dec 2029",
+      "Hilton-branded residences",
+      "Waterfront skyline views",
+    ],
+    amenities: [
+      "Swimming pool",
+      "Fully-equipped gym",
+      "Concierge",
+      "Covered parking",
+      "24/7 security", // TODO: confirm amenities
+    ],
+    images: gallery("hilton", 16),
+  },
+  {
     slug: "emirates-hills-villa",
     title: "Signature Villa in Emirates Hills", // TODO: confirm title
     community: "Emirates Hills",
