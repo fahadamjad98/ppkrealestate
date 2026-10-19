@@ -55,9 +55,9 @@ export const LISTINGS: Listing[] = [
     location: "Dubai, UAE", // TODO: confirm exact location
     purpose: "sale",
     type: "Apartment",
-    price: "AED 2,112,000",
+    price: "AED 1,800,000",
     beds: "1",
-    baths: "1", // TODO: confirm
+    baths: "2",
     area: "650.57 sqft",
     reference: "PPK-SPO-001",
     description:
@@ -87,7 +87,7 @@ export const LISTINGS: Listing[] = [
     type: "Apartment",
     price: "AED 3,243,000",
     beds: "1",
-    baths: "1", // TODO: confirm
+    baths: "2",
     area: "813.97 sqft",
     reference: "PPK-HR-001",
     description:

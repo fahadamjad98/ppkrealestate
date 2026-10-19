@@ -23,6 +23,27 @@ interface GoogleReview {
  */
 const REVIEWS: GoogleReview[] = [
   {
+    name: "Hamza Shegerrr16",
+    timeAgo: "a week ago",
+    rating: 5,
+    color: "#b5651d",
+    text: "I can't recommend PPK Real Estate enough! From the start, the whole team was professional, organized, and easy to deal with. Special thanks to Paaria, who made everything so simple for me. I was new and didn't know much about how renting works here, but she was patient with all my questions, quick to respond, and genuinely cared about finding me the right apartment, not just closing a deal. She explained every step clearly and made the process stress-free. You can tell PPK values its clients and hires people who actually care. If you're looking for a real estate company you can trust, this is the one. Thank you for everything!",
+  },
+  {
+    name: "dipson paul",
+    timeAgo: "2 weeks ago",
+    rating: 5,
+    color: "#2f6e4f",
+    text: "Working with Paaria at PPK Real Estate was a very positive experience. She was attentive, efficient, and consistently helpful, with a strong understanding of the property market. Paaria takes the time to understand what her clients are looking for and offers suitable recommendations accordingly. Whether you are buying, selling, or leasing a property, you can count on her for clear communication, valuable advice, and professional support throughout the process. I would gladly recommend her to anyone looking for a reliable real estate professional.",
+  },
+  {
+    name: "Daat Logistics LLC",
+    timeAgo: "a month ago",
+    rating: 5,
+    color: "#5a4fa0",
+    text: "Paaria is very professional in dealing. Always fair in her dealings. Will always recommend her.",
+  },
+  {
     name: "Samar Amin",
     timeAgo: "6 months ago",
     rating: 5,
