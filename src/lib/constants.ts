@@ -37,6 +37,7 @@ export const BRAND = {
     instagram: "https://www.instagram.com/ppkrealestate/",
     linkedin: "https://ae.linkedin.com/company/ppkreal-estate",
     facebook: "https://www.facebook.com/people/PPK-Real-Estate/61595247029524/",
+    tiktok: "https://www.tiktok.com/@ppkrealestate",
   },
 } as const;
 

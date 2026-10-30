@@ -27,10 +27,17 @@ const FacebookIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+const TikTokIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+    <path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.2v12.76a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1-2.59-2.59 2.59 2.59 0 0 1 3.37-2.47V7.93a5.8 5.8 0 0 0-.78-.05A5.78 5.78 0 0 0 4 13.67a5.78 5.78 0 0 0 9.9 4.06 5.78 5.78 0 0 0 1.67-4.06V8.72a7.5 7.5 0 0 0 4.43 1.42V6.94a4.28 4.28 0 0 1-3.4-1.12Z" />
+  </svg>
+);
+
 const SOCIALS = [
   { icon: InstagramIcon, href: BRAND.social.instagram, label: "Instagram" },
   { icon: LinkedInIcon, href: BRAND.social.linkedin, label: "LinkedIn" },
   { icon: FacebookIcon, href: BRAND.social.facebook, label: "Facebook" },
+  { icon: TikTokIcon, href: BRAND.social.tiktok, label: "TikTok" },
 ];
 
 const COLUMNS = [
